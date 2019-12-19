@@ -14,11 +14,13 @@ Functions:
 '''
 
 team_name = 'TEAM 3'
-strategy_name = 'however you want to describe your strategy'
-strategy_description = 'How does this strategy decide?'
+team_members = ['Max Vogel', 'Bert', 'David', 'Aidan']
+strategy_name = 'Tat for Tit'
+strategy_description = 'Tit for Tat, but we always start with betraying'
+
 
 def move(my_last_move, their_last_move):
-    '''
+    """
     Make my move based on the history with this player.
 
     my_last_move: a one letter String (c or b) that represents the last move you made
@@ -26,8 +28,12 @@ def move(my_last_move, their_last_move):
     their_last_move: a one letter String (c or b) that represents the last move your
         opponent made against you
     Returns 'c' or 'b' for collude or betray.
-    '''
-    return 'c'
+    """
+
+    if not my_last_move:  # first move of the game
+        return 'b'
+    return their_last_move
+
 
 if __name__ == '__main__':
-  move()
+    move()
